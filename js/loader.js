@@ -1,7 +1,7 @@
 var loader = document.getElementsByClassName('loader')[0];
 
 
-function displayLoader() {
+function showLoader() {
     loader.style.display = 'flex';
 }
 function hideLoader() {

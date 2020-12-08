@@ -1,23 +1,6 @@
-var modalMovieDetails = document.getElementsByClassName('details')[0];
 var filterType = document.getElementById('filter-type');
 var filterNameValue = document.getElementById('filter-name-value');
 var filterGenreValue = document.getElementById('filter-genre-value');
-
-window.onload = function() {
-
-    let response = getAllMovies();
-    
-    generateTable(response);
-    
-}
-
-function getAllMovies() {
-    return request('');
-}
-
-function getMovieDetails(movieId){
-    return request(movieId);
-}
 
 function listGenres() {
     let response = request('genres');
@@ -58,10 +41,6 @@ function filterMovie() {
         'name': filterNameValue.value,
         'genre': filterGenreValue.value
     }
-    
-
-
-    // console.log(type, value[type]);
     let response = request(`filter/${type}/${value[type]}`);
     generateTable(response);
 

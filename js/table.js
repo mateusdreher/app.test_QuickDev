@@ -14,7 +14,6 @@ function generateTable(movies) {
     });
 
     mainTable.appendChild(bodyTable);
-    hideLoader();
     mainTable.style.display = 'block';
     ordenar();
 
@@ -23,12 +22,11 @@ function generateTable(movies) {
 function addTableLine(id, lineInfo) {
     
     let newLine = document.createElement('tr');
-    newLine.id = id;
 
     lineInfo.forEach((value) => {
         let newColumn = document.createElement('th');
         newColumn.appendChild(document.createTextNode(value));
-
+        newColumn.id = id;
         newLine.appendChild(newColumn);
     });
 
@@ -37,6 +35,7 @@ function addTableLine(id, lineInfo) {
 
 
 function ordenar() {
+    console.log("AUI");
     var values = [].slice.call(document.querySelectorAll('.table tbody tr')).map(function(el) {
       return '<tr>' + el.innerHTML + '</tr>';  
     });
