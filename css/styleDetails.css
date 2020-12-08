@@ -31,12 +31,11 @@ header > img{
 
 .genres {
     display:flex;
-    justify-content:space-between;
 }
 .tag-genre {
     border-radius: 15px;
     border: 2px solid black;
-    padding:2%;
+    padding:3%;
     margin-left: 2%;
     font-weight:bold;
     font-style: italic;

@@ -1,5 +1,4 @@
-const BASE_URI = 'http://localhost:3000/api/movies';
-
+const BASE_URI = 'https://api-filmow.herokuapp.com/api/movies';
 function request(endpoint) {
     showLoader();
     let url = `${BASE_URI}/${endpoint}`;

@@ -5,9 +5,11 @@ body {
 header {
     width:100%;
     display:flex;
-    justify-content: space-around;
+    justify-content: center;
     align-items: baseline;
     margin-bottom: 5%;
+    border-bottom: 2px dashed black;
+    padding: 5%;
 }
 
 .table {

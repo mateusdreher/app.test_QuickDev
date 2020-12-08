@@ -4,11 +4,13 @@ var divOverview = document.getElementsByClassName('overview')[0];
 var mainTable = document.getElementsByClassName('table')[0];
 var bodyTable = document.getElementsByTagName('tbody')[0];
 var divBackground = document.getElementsByTagName('header')[0];
+var pageTitle = document.getElementsByTagName('title')[0];
 
 window.onload = function(){
 
     let movieInfos = JSON.parse(localStorage.getItem('details'));
-    
+    console.log(movieInfos);
+    setPageTitle(movieInfos.title);
     setPoster(movieInfos.poster_path);
     setBackground(movieInfos.backdrop_path);
     setMainInfos(movieInfos.title, movieInfos.genres);
@@ -29,6 +31,10 @@ window.onload = function(){
 
     setAditionalInfos(aditionalInfos);
     
+}
+
+function setPageTitle(title) {
+    pageTitle.innerHTML = title;
 }
 
 function setMainInfos(title, genres) {

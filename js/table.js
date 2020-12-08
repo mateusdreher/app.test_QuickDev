@@ -2,6 +2,8 @@ var mainTable = document.getElementsByClassName('table')[0];
 var bodyTable = document.getElementsByTagName('tbody')[0];
 
 function generateTable(movies) {
+    movies = ordenar(movies);
+
     bodyTable.innerHTML = "";
     Object.keys(movies).forEach((index) => {
 
@@ -15,7 +17,7 @@ function generateTable(movies) {
 
     mainTable.appendChild(bodyTable);
     mainTable.style.display = 'block';
-    ordenar();
+
 
 }
 
@@ -34,11 +36,9 @@ function addTableLine(id, lineInfo) {
 }
 
 
-function ordenar() {
-    console.log("AUI");
-    var values = [].slice.call(document.querySelectorAll('.table tbody tr')).map(function(el) {
-      return '<tr>' + el.innerHTML + '</tr>';  
+function ordenar(value, param) {
+    
+    return value.sort((a, b) => {
+        return (a.title > b.title) ? 1 : -1;
     });
-    values = values.sort();
-    document.querySelector('.table tbody').innerHTML = values.join('');
-  }
+}
