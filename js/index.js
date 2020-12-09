@@ -21,6 +21,6 @@ function getMovieDetails(movieId){
     let response = request(`details/${movieId}`);
     localStorage.clear();
     localStorage.setItem('details', JSON.stringify(response));
-    location.href = `file:///home/mateusdreher/Desktop/Projetos/Teste%20Quickdev/app.test_QuickDev/pages/movieDetails.html`;
+    location.href = `${location.href}/movieDetails.html`;
 }
 
